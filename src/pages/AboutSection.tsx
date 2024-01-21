@@ -14,15 +14,12 @@ import {
   SiMongodb,
   SiMui,
   SiMysql,
-  SiNestjs,
-  SiNextdotjs,
   SiNodedotjs,
   SiReact,
   SiSupabase,
   SiTailwindcss,
   SiTypescript,
 } from 'react-icons/si';
-import { Link } from 'react-router-dom';
 
 const svgIconStyle = 'w-[20px] md:w-[26px] lg:w-[35px]';
 

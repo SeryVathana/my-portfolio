@@ -3,12 +3,11 @@ import { useParams } from 'react-router-dom';
 
 import { useEffect, useState } from 'react';
 
-import projects from '../data/projectData';
-import ProjectType from '@/types/projectType';
 import { Button } from '@/components/ui/button';
-import { SiGithub } from 'react-icons/si';
+import ProjectType from '@/types/projectType';
 import { FaEye } from 'react-icons/fa';
-import { AspectRatio } from '@radix-ui/react-aspect-ratio';
+import { SiGithub } from 'react-icons/si';
+import projects from '../data/projectData';
 
 import { Variants, motion } from 'framer-motion';
 

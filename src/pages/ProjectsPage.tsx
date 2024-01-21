@@ -2,7 +2,6 @@ import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Link } from 'react-router-dom';
 
-import { ReactNode } from 'react';
 import projects from '../data/projectData';
 
 import ProjectType from '@/types/projectType';
