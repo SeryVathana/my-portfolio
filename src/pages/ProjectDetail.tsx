@@ -10,6 +10,7 @@ import { SiGithub } from 'react-icons/si';
 import projects from '../data/projectData';
 
 import { Variants, motion } from 'framer-motion';
+import Footer from '@/components/Footer';
 
 const cardVariants: Variants = {
   offscreen: {
@@ -78,17 +79,30 @@ const ProjectDetail = () => {
           </div>
         </motion.div>
 
-        <motion.div variants={cardVariants} initial='offscreen' whileInView='onscreen' viewport={{ once: true }}>
-          <div className='w-[900px] h-auto     mx-auto my-20'>
+        <div className='w-[900px] h-auto     mx-auto my-20'>
+          <motion.div variants={cardVariants} initial='offscreen' whileInView='onscreen' viewport={{ once: true }}>
             <h3 className='mx-auto text-center my-5'>Project Screenshots</h3>
-            <img
-              src='https://images.pexels.com/photos/2167039/pexels-photo-2167039.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-              alt='img'
-              className=' rounded-xl'
-            />
+          </motion.div>
+          <div className='space-y-10'>
+            {project.screenshots.map((img, i) => {
+              return (
+                <motion.img
+                  key={i}
+                  src={img}
+                  alt='img'
+                  className=' rounded-xl'
+                  loading='lazy'
+                  variants={cardVariants}
+                  initial='offscreen'
+                  whileInView='onscreen'
+                  viewport={{ once: true }}
+                />
+              );
+            })}
           </div>
-        </motion.div>
+        </div>
       </MaxWidthWrapper>
+      <Footer />
     </div>
   );
 };

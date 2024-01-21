@@ -5,7 +5,6 @@ import { Mail } from 'lucide-react';
 import { ReactNode } from 'react';
 import { FaTelegramPlane } from 'react-icons/fa';
 import { FaDiscord, FaInstagram, FaLinkedinIn, FaSquareFacebook } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
 
 type SocialLinkType = {
   name: string;
@@ -34,33 +33,32 @@ const iconStyle = ' text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-800 h
 const SocialLinks: SocialLinkType[] = [
   {
     name: 'Email',
-    href: '/',
-
+    href: 'mailto:yooseryvathana@gmail.com',
     icon: <Mail className={cn(iconStyle, 'w-[1.6rem] sm:w-[2rem] md:w-[2.5rem] lg:w-[50px] h-full')} />,
   },
   {
     name: 'Facebook',
-    href: '/',
+    href: 'https://www.facebook.com/sery.vathana.9/',
     icon: <FaSquareFacebook className={iconStyle} />,
   },
   {
     name: 'Telegram',
-    href: '/',
+    href: 'https://t.me/seryvathana',
     icon: <FaTelegramPlane className={iconStyle} />,
   },
   {
     name: 'Instagram',
-    href: '/',
+    href: 'https://www.instagram.com/znaamz/',
     icon: <FaInstagram className={iconStyle} />,
   },
   {
     name: 'LinkedIn',
-    href: '/',
+    href: 'https://www.linkedin.com/in/yoo-sery-vathana-6b09441a0/',
     icon: <FaLinkedinIn className={iconStyle} />,
   },
   {
     name: 'Discord',
-    href: '/',
+    href: 'https://discordapp.com/users/810084063171313695',
     icon: <FaDiscord className={iconStyle} />,
   },
 ];
@@ -85,7 +83,9 @@ const ContactSection = () => {
                 whileInView='onscreen'
                 viewport={{ once: true }}
               >
-                <Link to={link.href}>{link.icon}</Link>
+                <a href={link.href} target='_blank'>
+                  {link.icon}
+                </a>
               </motion.li>
             );
           })}

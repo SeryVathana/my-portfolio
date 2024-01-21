@@ -33,17 +33,17 @@ const iconStyle = 'text-3xl text-gray-700 hover:text-gray-800';
 const Links = [
   {
     name: 'github',
-    href: '/',
+    href: 'https://github.com/SeryVathana',
     icon: <BsGithub className={iconStyle} />,
   },
   {
     name: 'telegram',
-    href: '/',
+    href: 'https://t.me/seryvathana',
     icon: <BsTelegram className={iconStyle} />,
   },
   {
     name: 'discord',
-    href: '/',
+    href: 'https://discordapp.com/users/810084063171313695',
     icon: <BsDiscord className={iconStyle} />,
   },
 ];
@@ -121,9 +121,9 @@ const HeroSection = () => {
             <div className='py-10 flex justify-center gap-10'>
               {Links.map((link) => {
                 return (
-                  <Link to={link.href} key={link.name}>
+                  <a href={link.href} target='_blank' key={link.name}>
                     {link.icon}
-                  </Link>
+                  </a>
                 );
               })}
             </div>
