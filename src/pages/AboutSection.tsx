@@ -322,6 +322,7 @@ const AboutSection = () => {
           variants={cardVariants}
           initial='offscreen'
           whileInView='onscreen'
+          viewport={{ once: true }}
           className='grid grid-cols-1 md:grid-cols-4 items-center my-10 gap-10'
         >
           <motion.h1 className='text-2xl sm:text-3xl md:text-4xl font-semibold text-center  md:text-end'>About Me</motion.h1>

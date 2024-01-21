@@ -5,13 +5,15 @@ import { cn } from '@/lib/utils';
 import { BiLogoMongodb } from 'react-icons/bi';
 import { FaReact } from 'react-icons/fa';
 import { GrMysql } from 'react-icons/gr';
-import { IoIosArrowRoundDown, IoIosArrowRoundForward, IoLogoJavascript, IoLogoNodejs } from 'react-icons/io';
+import { IoIosArrowRoundForward, IoLogoJavascript, IoLogoNodejs } from 'react-icons/io';
 import { IoLogoFirebase } from 'react-icons/io5';
-import { SiExpress, SiGithub, SiPython, SiTypescript } from 'react-icons/si';
+import { SiExpress, SiPython, SiTypescript } from 'react-icons/si';
 import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 
 import { Variants, motion } from 'framer-motion';
+import { BsDiscord, BsGithub, BsTelegram } from 'react-icons/bs';
+
+import myCV from '../assets/Seryvathana_CV.pdf';
 
 const cardVariants: Variants = {
   offscreen: {
@@ -25,6 +27,26 @@ const cardVariants: Variants = {
     },
   },
 };
+
+const iconStyle = 'text-3xl text-gray-700 hover:text-gray-800';
+
+const Links = [
+  {
+    name: 'github',
+    href: '/',
+    icon: <BsGithub className={iconStyle} />,
+  },
+  {
+    name: 'telegram',
+    href: '/',
+    icon: <BsTelegram className={iconStyle} />,
+  },
+  {
+    name: 'discord',
+    href: '/',
+    icon: <BsDiscord className={iconStyle} />,
+  },
+];
 
 const iconSize = 'text-xl sm:text-2xl md:text-3xl lg:text-5xl';
 
@@ -66,13 +88,7 @@ const HeroSection = () => {
         </div>
         <div className='flex flex-col justify-end text-center z-10 mt-32 md:mt-0'>
           <div className='space-y-5'>
-            <motion.div
-              variants={cardVariants}
-              initial='offscreen'
-              whileInView='onscreen'
-              viewport={{ once: true }}
-              className='space-y-5'
-            >
+            <motion.div variants={cardVariants} initial='offscreen' whileInView='onscreen' className='space-y-5'>
               <h2 className='text-xl sm:text-2xl  md:text-3xl font-semibold'>Hi,</h2>
               <h1 className=' text-3xl md:text-4xl lg:text-5xl font-semibold flex flex-col md:flex-row items-center justify-center'>
                 <span>I&apos;m </span>
@@ -87,10 +103,9 @@ const HeroSection = () => {
             <div className='flex gap-5 justify-center py-5 flex-wrap-reverse'>
               <motion.div variants={cardVariants} initial='offscreen' whileInView='onscreen' viewport={{ once: true }}>
                 <Button variant='outline' asChild>
-                  <HashLink to={'#about'} smooth className='text-xs sm:text-sm'>
-                    <span>More about me</span>
-                    <IoIosArrowRoundDown className='text-xl ml-2' />
-                  </HashLink>
+                  <a href={myCV} target='_blank' className='text-xs sm:text-sm'>
+                    <span>Check my CV</span>
+                  </a>
                 </Button>
               </motion.div>
 
@@ -103,12 +118,14 @@ const HeroSection = () => {
               </motion.div>
             </div>
 
-            <div className='py-10'>
-              <Button asChild variant='outline'>
-                <Link to={'/about'}>
-                  <SiGithub />
-                </Link>
-              </Button>
+            <div className='py-10 flex justify-center gap-10'>
+              {Links.map((link) => {
+                return (
+                  <Link to={link.href} key={link.name}>
+                    {link.icon}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>

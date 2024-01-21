@@ -25,15 +25,16 @@ body {
   list-style: none;
   width: 50px;
   height: 50px;
-  animation: animate 25s linear infinite;
+  animation: animate 25s ease-in infinite;
   /* bottom: -150px; */
   bottom: -50px;
   z-index: 0;
 }
 
 .circles li:nth-child(1) {
-  left: 5%;
+  left: 0%;
   animation-delay: 0s;
+  animation-duration: 10s;
 }
 
 .circles li:nth-child(2) {
@@ -45,39 +46,43 @@ body {
 .circles li:nth-child(3) {
   left: 35%;
   animation-delay: 4s;
+  animation-duration: 40s;
 }
 
 .circles li:nth-child(4) {
   left: 45%;
   animation-delay: 0s;
-  animation-duration: 28s;
+  animation-duration: 20s;
 }
 
 .circles li:nth-child(5) {
   left: 55%;
   animation-delay: 0s;
+  animation-duration: 15s;
 }
 
 .circles li:nth-child(6) {
   left: 65%;
   animation-delay: 6s;
+  animation-duration: 28s;
 }
 
 .circles li:nth-child(7) {
   left: 75%;
   animation-delay: 7s;
+  animation-duration: 10s;
 }
 
 .circles li:nth-child(8) {
   left: 85%;
   animation-delay: 15s;
-  animation-duration: 30s;
+  animation-duration: 15s;
 }
 
 .circles li:nth-child(9) {
   left: 90%;
   animation-delay: 2s;
-  animation-duration: 35s;
+  animation-duration: 15s;
 }
 
 .circles li:nth-child(10) {
