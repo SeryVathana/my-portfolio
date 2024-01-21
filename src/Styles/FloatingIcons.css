@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: 'Exo', sans-serif;
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 50px;
+  height: 50px;
+  animation: animate 25s linear infinite;
+  /* bottom: -150px; */
+  bottom: -50px;
+  z-index: 0;
+}
+
+.circles li:nth-child(1) {
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+  left: 25%;
+  animation-delay: 2s;
+  animation-duration: 25s;
+}
+
+.circles li:nth-child(3) {
+  left: 35%;
+  animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+  left: 45%;
+  animation-delay: 0s;
+  animation-duration: 28s;
+}
+
+.circles li:nth-child(5) {
+  left: 55%;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+  left: 65%;
+  animation-delay: 6s;
+}
+
+.circles li:nth-child(7) {
+  left: 75%;
+  animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+  left: 85%;
+  animation-delay: 15s;
+  animation-duration: 30s;
+}
+
+.circles li:nth-child(9) {
+  left: 90%;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+  left: 95%;
+  animation-delay: 0s;
+  animation-duration: 21s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-1000px);
+    opacity: 0.3;
+  }
+}
