@@ -51,13 +51,13 @@ const ProjectDetail = () => {
 
   return (
     <div>
-      <MaxWidthWrapper className='my-32'>
+      <MaxWidthWrapper className='my-40 md:my-32'>
         <motion.div className='flex items-center justify-center gap-5'>
-          <div className='text-2xl border w-fit p-2 rounded-md bg-gray-100'>{project.displayIcon}</div>
-          <h1 className='text-3xl font-semibold'>{project.title}</h1>
+          <div className='text-lg md:text-2xl border w-fit p-2 rounded-md bg-gray-100'>{project.displayIcon}</div>
+          <h1 className='text-lg md:text-3xl font-semibold'>{project.title}</h1>
         </motion.div>
         <motion.div variants={cardVariants} initial='offscreen' whileInView='onscreen' viewport={{ once: true }}>
-          <p className='text-center mx-auto max-w-[600px] my-10 text-lg'>
+          <p className='text-center mx-auto max-w-[600px] my-10 text-sm md:text-lg'>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat libero nihil sed deleniti fuga ab, atque commodi
             suscipit quia neque dolorum magnam aut dolore repellat iusto iure voluptatibus quae odit! Consequatur quae rerum,
             neque sed dolor amet culpa aliquid doloribus maxime beatae distinctio, quo, sequi dicta dolorem natus itaque rem.
@@ -65,21 +65,21 @@ const ProjectDetail = () => {
         </motion.div>
 
         <motion.div variants={cardVariants} initial='offscreen' whileInView='onscreen' viewport={{ once: true }}>
-          <div className='flex flex-wrap gap-10 justify-center my-10'>
+          <div className='flex flex-wrap gap-5 md:gap-10 justify-center my-10'>
             <Button className='py-6 flex items-center' variant={'outline'} asChild>
               <a href={project.links.github} target='_blank'>
-                <SiGithub className='text-3xl mr-3' /> <span className='text-lg mt-1'>Github</span>
+                <SiGithub className='text-xl md:text-3xl mr-3' /> <span className='text-sm md:text-lg mt-1'>Github</span>
               </a>
             </Button>
             <Button className='py-6 flex items-center' variant={'outline'} asChild>
               <a href={project.links.demo} target='_blank'>
-                <FaEye className='text-3xl mr-3' /> <span className='text-lg mt-1'>Demo</span>
+                <FaEye className='text-xl md:text-3xl mr-3' /> <span className='text-sm md:text-lg mt-1'>Demo</span>
               </a>
             </Button>
           </div>
         </motion.div>
 
-        <div className='w-[900px] h-auto     mx-auto my-20'>
+        <div className='max-w-[900px] h-auto     mx-auto my-20'>
           <motion.div variants={cardVariants} initial='offscreen' whileInView='onscreen' viewport={{ once: true }}>
             <h3 className='mx-auto text-center my-5'>Project Screenshots</h3>
           </motion.div>
@@ -90,7 +90,7 @@ const ProjectDetail = () => {
                   key={i}
                   src={img}
                   alt='img'
-                  className=' rounded-xl'
+                  className=' rounded-xl border w-auto'
                   loading='lazy'
                   variants={cardVariants}
                   initial='offscreen'
